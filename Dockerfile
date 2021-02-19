@@ -5,9 +5,6 @@ ARG REFRESHED_AT
 ENV REFRESHED_AT $REFRESHED_AT
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-# headless-chromium
-RUN chromium --version
-
 #JDK
 # RUN apt update
 RUN apt install openjdk-8-jdk openjdk-8-jre
