@@ -7,7 +7,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 #JDK
 RUN apt-get update
-RUN apt-get install software-properties-common
+RUN apt-get install -y software-properties-common
 RUN apt-add-repository 'deb http://security.debian.org/debian-security stretch/updates main'
 RUN apt-get update
 RUN apt-get install -y openjdk-8-jdk openjdk-8-jre
