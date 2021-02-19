@@ -50,4 +50,4 @@ RUN apt-get install -y --no-install-recommends mc
 # VOLUME
 WORKDIR /setbuilder
 
-# start it with: docker build -t tr . && docker run -v /var/run/docker.sock:/var/run/docker.sock -ti tr
+# start it with: docker build -t tru . && docker run -v /var/run/docker.sock:/var/run/docker.sock -ti tru
