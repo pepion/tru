@@ -7,6 +7,9 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 #JDK
 RUN apt-get update
+RUN apt-get install software-properties-common
+RUN apt-add-repository 'deb http://security.debian.org/debian-security stretch/updates main'
+RUN apt-get update
 RUN apt-get install -y openjdk-8-jdk openjdk-8-jre
 RUN java -version
 
@@ -26,7 +29,7 @@ RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 RUN apt-key fingerprint 0EBFCD88
 
 RUN add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   "deb [arch=amd64] https://download.docker.com/linux/debian \
    $(lsb_release -cs) \
    stable"
 
