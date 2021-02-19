@@ -38,8 +38,9 @@ RUN service docker start
 RUN apt-get install -y automake autoconf libtool pkg-config nasm build-essential dh-autoreconf
 
 # chromium
-RUN apt-get update && \
-    DEBIAN_FRONTEND="noninteractive" \
+# https://hub.docker.com/r/weboaks/node-karma-protractor-chrome
+#RUN apt-get update
+RUN DEBIAN_FRONTEND="noninteractive" \
     apt-get install -y --no-install-recommends \
     chromium \
     chromium-driver \
