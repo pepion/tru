@@ -12,6 +12,7 @@ RUN java -version
 
 # NODE
 # RUN apt-get update
+RUN apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
 	 apt-get install -y nodejs && \
 	 apt-get install -y build-essential
