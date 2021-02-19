@@ -6,8 +6,8 @@ ENV REFRESHED_AT $REFRESHED_AT
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 #JDK
-# RUN apt update
-RUN apt install openjdk-8-jdk openjdk-8-jre
+RUN apt-get update
+RUN apt-get install -y openjdk-8-jdk openjdk-8-jre
 RUN java -version
 
 # NODE
