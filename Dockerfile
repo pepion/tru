@@ -1,4 +1,4 @@
-FROM alpeware/chrome-headless-stable
+FROM node:14-buster
 MAINTAINER pepion@gmail.com
 
 ARG REFRESHED_AT
@@ -10,12 +10,8 @@ RUN apt-get update
 RUN apt-get install -y openjdk-8-jdk openjdk-8-jre
 RUN java -version
 
-# NODE
-# RUN apt-get update
-RUN apt-get install -y curl
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
-	 apt-get install -y nodejs && \
-	 apt-get install -y build-essential
+#
+RUN apt-get install -y build-essential
 
 # DOCKER
 #RUN apt-get update
@@ -40,6 +36,16 @@ RUN service docker start
 
 # autoreconf
 RUN apt-get install -y automake autoconf libtool pkg-config nasm build-essential dh-autoreconf
+
+# chromium
+RUN apt-get update && \
+    DEBIAN_FRONTEND="noninteractive" \
+    apt-get install -y --no-install-recommends \
+    chromium \
+    chromium-driver \
+    libatk-bridge2.0-0 \
+    libgconf-2-4 \
+    libxss1
 
 RUN npm install -g gulp
 
